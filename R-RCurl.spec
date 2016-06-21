@@ -4,7 +4,7 @@
 #
 Name     : R-RCurl
 Version  : 1.95
-Release  : 24
+Release  : 25
 URL      : http://cran.r-project.org/src/contrib/RCurl_1.95-4.5.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/RCurl_1.95-4.5.tar.gz
 Summary  : General network (HTTP/FTP/...) client interface for R
@@ -18,6 +18,7 @@ BuildRequires : curl-dev
 BuildRequires : libidn-dev
 BuildRequires : libxml2-dev
 BuildRequires : openssl-dev
+BuildRequires : xz-dev
 BuildRequires : zlib-dev
 
 %description
@@ -44,6 +45,8 @@ lib components for the R-RCurl package.
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -52,6 +55,7 @@ mkdir -p %{buildroot}/usr/lib64/R/library
 R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library RCurl
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost

@@ -1,0 +1,11 @@
+libR.so
+libc.so.6
+libcrypto.so.1.0.0
+libcurl.so.4
+libdl.so.2
+libidn.so.11
+liblzma.so.5
+libm.so.6
+libssl.so.1.0.0
+libxml2.so.2
+libz.so.1

@@ -1,3 +1,8 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 libidn-dev
+xz-dev
+curl-dev
+libxml2-dev
+openssl-dev
+zlib-dev
