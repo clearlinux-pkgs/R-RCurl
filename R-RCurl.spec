@@ -4,7 +4,7 @@
 #
 Name     : R-RCurl
 Version  : 1.95
-Release  : 27
+Release  : 28
 URL      : http://cran.r-project.org/src/contrib/RCurl_1.95-4.5.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/RCurl_1.95-4.5.tar.gz
 Summary  : General network (HTTP/FTP/...) client interface for R
@@ -17,6 +17,7 @@ BuildRequires : clr-R-helpers
 BuildRequires : curl-dev
 BuildRequires : libidn-dev
 BuildRequires : libxml2-dev
+BuildRequires : nghttp2-dev
 BuildRequires : openssl-dev
 BuildRequires : xz-dev
 BuildRequires : zlib-dev
@@ -40,6 +41,7 @@ lib components for the R-RCurl package.
 %setup -q -c -n RCurl
 
 %build
+export LANG=C
 
 %install
 rm -rf %{buildroot}

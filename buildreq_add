@@ -6,3 +6,4 @@ curl-dev
 libxml2-dev
 openssl-dev
 zlib-dev
+nghttp2-dev
