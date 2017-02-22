@@ -4,10 +4,10 @@
 #
 Name     : R-RCurl
 Version  : 1.95
-Release  : 31
-URL      : http://cran.r-project.org/src/contrib/RCurl_1.95-4.5.tar.gz
-Source0  : http://cran.r-project.org/src/contrib/RCurl_1.95-4.5.tar.gz
-Summary  : General network (HTTP/FTP/...) client interface for R
+Release  : 32
+URL      : http://cran.r-project.org/src/contrib/RCurl_1.95-4.8.tar.gz
+Source0  : http://cran.r-project.org/src/contrib/RCurl_1.95-4.8.tar.gz
+Summary  : General Network (HTTP/FTP/...) Client Interface for R
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
 Requires: R-RCurl-lib
@@ -42,11 +42,11 @@ lib components for the R-RCurl package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484547471
+export SOURCE_DATE_EPOCH=1487766368
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1484547471
+export SOURCE_DATE_EPOCH=1487766368
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -96,6 +96,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/RCurl/R/RCurl.rdb
 /usr/lib64/R/library/RCurl/R/RCurl.rdx
 /usr/lib64/R/library/RCurl/data/mimeTypeExtensions.rda
+/usr/lib64/R/library/RCurl/doc/FAQ.html
 /usr/lib64/R/library/RCurl/doc/cookies.xml
 /usr/lib64/R/library/RCurl/doc/fileUploads.xml
 /usr/lib64/R/library/RCurl/doc/philosophy.html
@@ -103,6 +104,8 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/RCurl/doc/withCookies.Rdb
 /usr/lib64/R/library/RCurl/doc/withCookies.html
 /usr/lib64/R/library/RCurl/enums/Renums.c
+/usr/lib64/R/library/RCurl/etc/README
+/usr/lib64/R/library/RCurl/etc/ca-bundle.crt
 /usr/lib64/R/library/RCurl/examples/CIS/cis.R
 /usr/lib64/R/library/RCurl/examples/CIS/cis1.R
 /usr/lib64/R/library/RCurl/examples/chunks.S
