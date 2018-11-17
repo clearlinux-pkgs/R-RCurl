@@ -4,16 +4,15 @@
 #
 Name     : R-RCurl
 Version  : 1.95.4.11
-Release  : 58
+Release  : 59
 URL      : https://cran.r-project.org/src/contrib/RCurl_1.95-4.11.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/RCurl_1.95-4.11.tar.gz
 Summary  : General Network (HTTP/FTP/...) Client Interface for R
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
-Requires: R-RCurl-lib
-Requires: R-bitops
+Requires: R-RCurl-lib = %{version}-%{release}
 BuildRequires : R-bitops
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 BuildRequires : curl-dev
 BuildRequires : libidn-dev
 BuildRequires : libxml2-dev
@@ -50,11 +49,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1531749700
+export SOURCE_DATE_EPOCH=1542430972
 
 %install
+export SOURCE_DATE_EPOCH=1542430972
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1531749700
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -90,7 +89,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library RCurl|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || : || :
+cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 
 
 %files
