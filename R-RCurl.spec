@@ -4,14 +4,13 @@
 #
 Name     : R-RCurl
 Version  : 1.95.4.12
-Release  : 63
+Release  : 64
 URL      : https://cran.r-project.org/src/contrib/RCurl_1.95-4.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/RCurl_1.95-4.12.tar.gz
 Summary  : General Network (HTTP/FTP/...) Client Interface for R
 Group    : Development/Tools
 License  : BSD-3-Clause MIT
 Requires: R-RCurl-lib = %{version}-%{release}
-Requires: R-bitops
 BuildRequires : R-bitops
 BuildRequires : buildreq-R
 BuildRequires : curl-dev
@@ -45,10 +44,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551718718
+export SOURCE_DATE_EPOCH=1552784573
 
 %install
-export SOURCE_DATE_EPOCH=1551718718
+export SOURCE_DATE_EPOCH=1552784573
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -84,8 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library RCurl|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  RCurl || :
 
 
 %files
@@ -174,10 +172,9 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/RCurl/help/paths.rds
 /usr/lib64/R/library/RCurl/html/00Index.html
 /usr/lib64/R/library/RCurl/html/R.css
-/usr/lib64/R/library/RCurl/libs/symbols.rds
+/usr/lib64/R/library/RCurl/tests/dynSetReader.R
+/usr/lib64/R/library/RCurl/tests/jpeg.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/RCurl/libs/RCurl.so
-/usr/lib64/R/library/RCurl/libs/RCurl.so.avx2
-/usr/lib64/R/library/RCurl/libs/RCurl.so.avx512
