@@ -4,7 +4,7 @@
 #
 Name     : R-RCurl
 Version  : 1.95.4.12
-Release  : 65
+Release  : 66
 URL      : https://cran.r-project.org/src/contrib/RCurl_1.95-4.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/RCurl_1.95-4.12.tar.gz
 Summary  : General Network (HTTP/FTP/...) Client Interface for R
@@ -44,10 +44,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552784573
+export SOURCE_DATE_EPOCH=1552950923
 
 %install
-export SOURCE_DATE_EPOCH=1552784573
+export SOURCE_DATE_EPOCH=1552950923
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
