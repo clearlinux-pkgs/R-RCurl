@@ -1,7 +1,5 @@
 # This file contains recursive sources that require this package
 R-Ecfun
 R-RProtoBuf
-R-knitr
 R-rneos
-R-rsconnect
 R-rsdmx
