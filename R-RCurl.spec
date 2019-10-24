@@ -4,7 +4,7 @@
 #
 Name     : R-RCurl
 Version  : 1.95.4.12
-Release  : 71
+Release  : 72
 URL      : https://cran.r-project.org/src/contrib/RCurl_1.95-4.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/RCurl_1.95-4.12.tar.gz
 Summary  : General Network (HTTP/FTP/...) Client Interface for R
@@ -19,20 +19,16 @@ BuildRequires : libidn-dev
 BuildRequires : libxml2-dev
 BuildRequires : nghttp2-dev
 BuildRequires : openssl-dev
+BuildRequires : util-linux
 BuildRequires : xz-dev
 BuildRequires : zlib-dev
 
 %description
-Provides functions to allow one to compose general HTTP requests
-        and provides convenient functions to fetch URIs, get & post
-        forms, etc. and process the results returned by the Web server.
-        This provides a great deal of control over the HTTP/FTP/...
-        connection and the form of the request while providing a
-        higher-level interface than is available just using R socket
-        connections.  Additionally, the underlying implementation is
-        robust and extensive, supporting FTP/FTPS/TFTP (uploads and
-        downloads), SSL/HTTPS, telnet, dict, ldap, and also supports
-        cookies, redirects, authentication, etc.
+This package is a (currently) simple interface to the
+libcurl functionality.  This is an extensive and well
+tested library that takes care of so many details that
+we would have to mimic (probably incompletely and poorly)
+if we were to write this in the R language directly.
 
 %package lib
 Summary: lib components for the R-RCurl package.
@@ -50,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569370370
+export SOURCE_DATE_EPOCH=1571885192
 
 %install
-export SOURCE_DATE_EPOCH=1569370370
+export SOURCE_DATE_EPOCH=1571885192
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
