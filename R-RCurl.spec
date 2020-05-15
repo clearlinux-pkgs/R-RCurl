@@ -4,7 +4,7 @@
 #
 Name     : R-RCurl
 Version  : 1.98.1.2
-Release  : 78
+Release  : 79
 URL      : https://cran.r-project.org/src/contrib/RCurl_1.98-1.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/RCurl_1.98-1.2.tar.gz
 Summary  : General Network (HTTP/FTP/...) Client Interface for R
@@ -23,11 +23,16 @@ BuildRequires : xz-dev
 BuildRequires : zlib-dev
 
 %description
-This package is a (currently) simple interface to the
-libcurl functionality.  This is an extensive and well
-tested library that takes care of so many details that
-we would have to mimic (probably incompletely and poorly)
-if we were to write this in the R language directly.
+Provides functions to allow one to compose general HTTP requests
+        and provides convenient functions to fetch URIs, get & post
+        forms, etc. and process the results returned by the Web server.
+        This provides a great deal of control over the HTTP/FTP/...
+        connection and the form of the request while providing a
+        higher-level interface than is available just using R socket
+        connections.  Additionally, the underlying implementation is
+        robust and extensive, supporting FTP/FTPS/TFTP (uploads and
+        downloads), SSL/HTTPS, telnet, dict, ldap, and also supports
+        cookies, redirects, authentication, etc.
 
 %package lib
 Summary: lib components for the R-RCurl package.
@@ -39,21 +44,22 @@ lib components for the R-RCurl package.
 
 %prep
 %setup -q -c -n RCurl
+cd %{_builddir}/RCurl
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1587404592
+export SOURCE_DATE_EPOCH=1589518911
 
 %install
-export SOURCE_DATE_EPOCH=1587404592
+export SOURCE_DATE_EPOCH=1589518911
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
