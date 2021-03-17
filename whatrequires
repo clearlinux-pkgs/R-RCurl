@@ -1,5 +1,5 @@
 # This file contains recursive sources that require this package
 R-Ecfun
 R-RProtoBuf
+R-fds
 R-rneos
-R-rsdmx
