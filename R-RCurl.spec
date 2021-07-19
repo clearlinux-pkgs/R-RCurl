@@ -4,7 +4,7 @@
 #
 Name     : R-RCurl
 Version  : 1.98.1.3
-Release  : 88
+Release  : 89
 URL      : https://cran.r-project.org/src/contrib/RCurl_1.98-1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/RCurl_1.98-1.3.tar.gz
 Summary  : General Network (HTTP/FTP/...) Client Interface for R
@@ -51,10 +51,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1620763360
+export SOURCE_DATE_EPOCH=1626704554
 
 %install
-export SOURCE_DATE_EPOCH=1620763360
+export SOURCE_DATE_EPOCH=1626704554
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -189,3 +189,4 @@ R CMD check --no-manual --no-examples --no-codoc RCurl || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/RCurl/libs/RCurl.so
 /usr/lib64/R/library/RCurl/libs/RCurl.so.avx2
+/usr/lib64/R/library/RCurl/libs/RCurl.so.avx512
