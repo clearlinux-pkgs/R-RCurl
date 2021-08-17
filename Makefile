@@ -1,5 +1,5 @@
 PKG_NAME := R-RCurl
-URL = https://cran.r-project.org/src/contrib/RCurl_1.98-1.3.tar.gz
+URL = https://cran.r-project.org/src/contrib/RCurl_1.98-1.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
