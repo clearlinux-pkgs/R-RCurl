@@ -4,7 +4,7 @@
 #
 Name     : R-RCurl
 Version  : 1.98.1.10
-Release  : 108
+Release  : 109
 URL      : https://cran.r-project.org/src/contrib/RCurl_1.98-1.10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/RCurl_1.98-1.10.tar.gz
 Summary  : General Network (HTTP/FTP/...) Client Interface for R
